@@ -7,6 +7,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -33,6 +35,7 @@ public class ComposeActivity extends AppCompatActivity {
     ImageView ivProfileImg;
     EditText etBody;
     FloatingActionButton fabTweet;
+    TextView tvRemain;
 
     SharedPreferences spref;
     SharedPreferences.Editor editor;
@@ -63,6 +66,7 @@ public class ComposeActivity extends AppCompatActivity {
         ivProfileImg = (ImageView) findViewById(R.id.ivProfileImg);
         etBody = (EditText) findViewById(R.id.etBody);
         fabTweet = (FloatingActionButton) findViewById(R.id.fabTweet);
+        tvRemain = (TextView) findViewById(R.id.tvRemain);
     }
 
     public void init() {
@@ -75,6 +79,8 @@ public class ComposeActivity extends AppCompatActivity {
                 }
             }
         });
+
+        etBody.addTextChangedListener(etWatcher);
 
         fabTweet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,7 +127,19 @@ public class ComposeActivity extends AppCompatActivity {
             setResult(RESULT_CANCELED);
             Log.d("DEBUG", "SINGLE_RESULT: FAIL");
         }
-
     }
+
+    private final TextWatcher etWatcher = new TextWatcher() {
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            //This sets a textview to the current length
+            tvRemain.setText(String.valueOf(140 - s.length()));
+        }
+
+        public void afterTextChanged(Editable s) {
+        }
+    };
 
 }

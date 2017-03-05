@@ -75,6 +75,7 @@ public class TimelineActivity extends AppCompatActivity {
                     editor.putString("auth_name", response.getString("name"));
                     editor.putString("auth_profile_image_url", response.getString("profile_image_url"));
                     editor.apply();
+                    setTitle("@"+spref.getString("auth_screen_name", "Timeline"));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -105,7 +106,6 @@ public class TimelineActivity extends AppCompatActivity {
                 }
             }
         });
-        setTitle("@"+spref.getString("auth_screen_name", "Timeline"));
     }
 
     // Send an API request to the timeline JSON
