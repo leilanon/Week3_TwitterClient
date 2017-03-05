@@ -1,4 +1,4 @@
-package com.codepath.apps.week3_twitterclient;
+package com.codepath.apps.week3_twitterclient.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.codepath.apps.week3_twitterclient.EndlessScrollListener;
+import com.codepath.apps.week3_twitterclient.R;
+import com.codepath.apps.week3_twitterclient.TwitterApplication;
+import com.codepath.apps.week3_twitterclient.TwitterClient;
 import com.codepath.apps.week3_twitterclient.adapter.TweetsArrayAdapter;
 import com.codepath.apps.week3_twitterclient.model.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;

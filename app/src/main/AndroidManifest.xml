@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -34,15 +34,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TimelineActivity"
+            android:name=".activities.TimelineActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ComposeActivity"
-            android:parentActivityName=".TimelineActivity"
+            android:name=".activities.ComposeActivity"
+            android:parentActivityName=".activities.TimelineActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.codepath.apps.week3_twitterclient.TimelineActivity" />
+                android:value="com.codepath.apps.week3_twitterclient.activities.TimelineActivity" />
         </activity>
     </application>
 

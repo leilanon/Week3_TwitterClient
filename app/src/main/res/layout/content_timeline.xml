@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.codepath.apps.week3_twitterclient.TimelineActivity"
+    tools:context="com.codepath.apps.week3_twitterclient.activities.TimelineActivity"
     tools:showIn="@layout/activity_timeline">
 
     <ListView

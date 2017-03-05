@@ -1,4 +1,4 @@
-package com.codepath.apps.week3_twitterclient;
+package com.codepath.apps.week3_twitterclient.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.codepath.apps.week3_twitterclient.R;
+import com.codepath.apps.week3_twitterclient.TwitterApplication;
+import com.codepath.apps.week3_twitterclient.TwitterClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONException;

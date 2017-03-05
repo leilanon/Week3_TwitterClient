@@ -1,10 +1,12 @@
-package com.codepath.apps.week3_twitterclient;
+package com.codepath.apps.week3_twitterclient.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 
+import com.codepath.apps.week3_twitterclient.R;
+import com.codepath.apps.week3_twitterclient.TwitterClient;
 import com.codepath.oauth.OAuthLoginActionBarActivity;
 
 public class LoginActivity extends OAuthLoginActionBarActivity<TwitterClient> {

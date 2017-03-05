@@ -7,7 +7,7 @@
     android:background="@color/colorBackgroundGrey"
     android:padding="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ComposeActivity"
+    tools:context=".activities.ComposeActivity"
     tools:showIn="@layout/activity_compose">
 
     <RelativeLayout
