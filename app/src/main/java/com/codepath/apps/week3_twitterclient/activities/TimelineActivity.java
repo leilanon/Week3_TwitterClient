@@ -95,15 +95,8 @@ public class TimelineActivity extends AppCompatActivity {
                 // Triggered only when new data needs to be appended to the list
                 // Add whatever code is needed to append new items to your AdapterView
                 // or loadNextDataFromApi(totalItemsCount)
-                if (retSinceId.equals(retMaxId)) {
-                    return false;
-                } else if (retMaxId < retSinceId) {
-                    populateTimeline(page);
-                    retSinceId = retMaxId;
-                    return true; // ONLY if more data is actually being loaded; false otherwise.
-                } else {
-                    return false;
-                }
+                populateTimeline(page);
+                return true; // ONLY if more data is actually being loaded; false otherwise.
             }
         });
     }
@@ -121,7 +114,6 @@ public class TimelineActivity extends AppCompatActivity {
                     // Load Model data into ListView
                     aTweets.addAll(Tweet.fromJSONArray(json));
                     retMaxId = tweets.get(tweets.size()-1).getUid();
-                    retSinceId = tweets.get(0).getUid();
                 }
 
                 // FAILURE
@@ -171,32 +163,6 @@ public class TimelineActivity extends AppCompatActivity {
         }
     }
 
-//    public void getLimitLeft() {
-//        client.getAPIRateLimit(new JsonHttpResponseHandler() {
-//            @Override
-//            public void onSuccess(int statusCode, Header[] headers, JSONObject jsonObject) {
-//                try {
-//                    String tmp = jsonObject
-//                            .getJSONObject("resources")
-//                            .getJSONObject("statuses")
-//                            .getJSONObject("/statuses/home_timeline")
-//                            .getString("remaining");
-//                    leftReq = Integer.valueOf(tmp);
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//            // FAILURE
-//            @Override
-//            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-//                Log.d("DEBUG", errorResponse.toString());
-//            }
-//        });
-//    }
-
-    // ActionBar
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
@@ -220,6 +186,8 @@ public class TimelineActivity extends AppCompatActivity {
 
         editor.putString("etBody", "").apply();
     }
+
+    // ActionBar
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
